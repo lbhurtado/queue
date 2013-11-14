@@ -1,0 +1,18 @@
+.travis.yml
+UPGRADE*
+
+# Bootstrap
+app/bootstrap*
+
+# Symfony directories
+vendor/*
+*/logs/*
+*/cache/*
+web/uploads/*
+web/bundles/*
+src/Acme/*
+
+# Configuration files
+app/config/parameters.ini
+app/config/parameters.yml
+conf/*
