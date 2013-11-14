@@ -1,0 +1,4 @@
+applester_queue:
+    resource: "@ApplesterQueueBundle/Resources/config/routing.yml"
+    prefix:   /
+
