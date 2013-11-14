@@ -1,0 +1,17 @@
+Applester\QueueBundle\Entity\Slot:
+  type: entity
+  table: slot
+  id:
+    id:
+      type: integer
+      generator: { strategy: AUTO }
+  fields:
+    name:
+      type: string
+      length: 255
+    default:
+      type: boolean
+    tag:
+      type: string
+      length: 255
+      nullable: true
