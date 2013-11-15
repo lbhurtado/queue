@@ -1,0 +1,36 @@
+Applester\QueueBundle\Entity\Queue:
+  type: entity
+  table: queue
+  id:
+    id:
+      type: integer
+      generator: { strategy: AUTO }
+  fields:
+    mobile:
+      type: string
+      length: 15
+    handle:
+      type: string
+      length: 50
+    date:
+      type: date
+    remarks:
+      type: string
+      length: text
+      nullable: true
+  oneToOne:
+    slot:
+      targetEntity: Slot
+      joinColumn:
+        name: slot_id
+        referencedColumnName: id
+    business:
+      targetEntity: Business
+      joinColumn:
+        name: business_id
+        referencedColumnName: id
+    window:
+      targetEntity: Window
+      joinColumn:
+        name: window_id
+        referencedColumnName: id 

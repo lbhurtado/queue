@@ -1,0 +1,21 @@
+Applester\QueueBundle\Entity\Lookup: 
+  type: mappedSuperclass
+  fields:
+    id:
+      id: true
+      type: integer
+      generator:
+        strategy: AUTO
+    name:
+      type: string
+      unique: true
+      length: 255
+      nullable: true
+    default:
+      type: boolean
+      nullable: true
+      column: _default
+    tag:
+      type: string
+      length: 255
+      nullable: true

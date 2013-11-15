@@ -1,4 +1,4 @@
-Applester\QueueBundle\Entity\Slot:
+Applester\QueueBundle\Entity\Business:
   type: entity
   extends: Lookup
   fields: 
