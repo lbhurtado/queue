@@ -108,4 +108,10 @@ class Lookup
     {
         return $this->tag;
     }
+    
+    public function __toString()
+    {
+        return $this->getName() ? $this->getName() : "";
+    }
+
 }

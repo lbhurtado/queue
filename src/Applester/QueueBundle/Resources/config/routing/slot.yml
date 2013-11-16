@@ -1,0 +1,30 @@
+applester_slot:
+    pattern:  /
+    defaults: { _controller: "ApplesterQueueBundle:Slot:index" }
+
+applester_slot_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "ApplesterQueueBundle:Slot:show" }
+
+applester_slot_new:
+    pattern:  /new
+    defaults: { _controller: "ApplesterQueueBundle:Slot:new" }
+
+applester_slot_create:
+    pattern:  /create
+    defaults: { _controller: "ApplesterQueueBundle:Slot:create" }
+    requirements: { _method: post }
+
+applester_slot_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "ApplesterQueueBundle:Slot:edit" }
+
+applester_slot_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "ApplesterQueueBundle:Slot:update" }
+    requirements: { _method: post|put }
+
+applester_slot_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "ApplesterQueueBundle:Slot:delete" }
+    requirements: { _method: post|delete }

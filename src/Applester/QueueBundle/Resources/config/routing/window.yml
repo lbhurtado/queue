@@ -1,0 +1,30 @@
+window:
+    pattern:  /
+    defaults: { _controller: "ApplesterQueueBundle:Window:index" }
+
+window_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "ApplesterQueueBundle:Window:show" }
+
+window_new:
+    pattern:  /new
+    defaults: { _controller: "ApplesterQueueBundle:Window:new" }
+
+window_create:
+    pattern:  /create
+    defaults: { _controller: "ApplesterQueueBundle:Window:create" }
+    requirements: { _method: post }
+
+window_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "ApplesterQueueBundle:Window:edit" }
+
+window_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "ApplesterQueueBundle:Window:update" }
+    requirements: { _method: post|put }
+
+window_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "ApplesterQueueBundle:Window:delete" }
+    requirements: { _method: post|delete }

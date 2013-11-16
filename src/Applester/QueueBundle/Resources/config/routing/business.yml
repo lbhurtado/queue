@@ -1,0 +1,30 @@
+business:
+    pattern:  /
+    defaults: { _controller: "ApplesterQueueBundle:Business:index" }
+
+business_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "ApplesterQueueBundle:Business:show" }
+
+business_new:
+    pattern:  /new
+    defaults: { _controller: "ApplesterQueueBundle:Business:new" }
+
+business_create:
+    pattern:  /create
+    defaults: { _controller: "ApplesterQueueBundle:Business:create" }
+    requirements: { _method: post }
+
+business_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "ApplesterQueueBundle:Business:edit" }
+
+business_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "ApplesterQueueBundle:Business:update" }
+    requirements: { _method: post|put }
+
+business_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "ApplesterQueueBundle:Business:delete" }
+    requirements: { _method: post|delete }

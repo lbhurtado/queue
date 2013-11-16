@@ -1,3 +1,23 @@
 applester_queue_homepage:
-    pattern:  /hello/{name}
+    pattern: /hello/{name}
     defaults: { _controller: ApplesterQueueBundle:Default:index }
+
+applester_queue_slot:
+    resource: "@ApplesterQueueBundle/Resources/config/routing/slot.yml"
+    prefix: /slot
+
+applester_queue_window:
+    resource: "@ApplesterQueueBundle/Resources/config/routing/window.yml"
+    prefix: /window
+
+applester_queue_business:
+    resource: "@ApplesterQueueBundle/Resources/config/routing/business.yml"
+    prefix: /business
+
+applester_queue_token:
+    resource: "@ApplesterQueueBundle/Resources/config/routing/token.yml"
+    prefix: /token
+
+applester_queue_queue:
+    resource: "@ApplesterQueueBundle/Resources/config/routing/queue.yml"
+    prefix: /queue

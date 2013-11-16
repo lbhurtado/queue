@@ -18,7 +18,7 @@ Applester\QueueBundle\Entity\Queue:
       type: string
       length: text
       nullable: true
-  oneToOne:
+  manyToOne:
     slot:
       targetEntity: Slot
       joinColumn:

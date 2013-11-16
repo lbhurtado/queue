@@ -1,0 +1,30 @@
+queue:
+    pattern:  /
+    defaults: { _controller: "ApplesterQueueBundle:Queue:index" }
+
+queue_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "ApplesterQueueBundle:Queue:show" }
+
+queue_new:
+    pattern:  /new
+    defaults: { _controller: "ApplesterQueueBundle:Queue:new" }
+
+queue_create:
+    pattern:  /create
+    defaults: { _controller: "ApplesterQueueBundle:Queue:create" }
+    requirements: { _method: post }
+
+queue_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "ApplesterQueueBundle:Queue:edit" }
+
+queue_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "ApplesterQueueBundle:Queue:update" }
+    requirements: { _method: post|put }
+
+queue_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "ApplesterQueueBundle:Queue:delete" }
+    requirements: { _method: post|delete }

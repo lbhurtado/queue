@@ -220,4 +220,10 @@ class Queue
     {
         return $this->window;
     }
+
+    public function __toString()
+    {
+    	return $this->getMobile() ? $this->getMobile() : "";
+    }
+
 }
