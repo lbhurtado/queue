@@ -1,0 +1,113 @@
+---
+vagrantfile-local:
+    vm:
+        box: ubuntu-precise12042-x64-vbox4210
+        box_url: 'http://puppet-vagrant-boxes.puppetlabs.com/ubuntu-server-12042-x64-vbox4210.box'
+        hostname: null
+        network:
+            private_network: 10.10.10.10
+            forwarded_port:
+                DzSxRRMCY20L:
+                    host: '8888'
+                    guest: '80'
+        provider:
+            virtualbox:
+                modifyvm:
+                    name: queue-vm
+                    natdnshostresolver1: on
+                    memory: '1024'
+                setextradata:
+                    VBoxInternal2/SharedFoldersEnableSymlinksCreate/v-root: 1
+        provision:
+            puppet:
+                manifests_path: puppet/manifests
+                options:
+                    - --verbose
+                    - '--hiera_config /vagrant/hiera.yaml'
+                    - '--parser future'
+        synced_folder:
+            BilI7R23xc7U:
+                id: vagrant-root
+                source: ./
+                target: /var/www
+                nfs: 'false'
+        usable_port_range: 2200..2250
+    ssh:
+        host: null
+        port: null
+        private_key_path: null
+        username: vagrant
+        guest_port: null
+        keep_alive: true
+        forward_agent: false
+        forward_x11: false
+        shell: 'bash -l'
+    vagrant:
+        host: ':detect'
+server:
+    packages:
+        - acl
+    dot_files:
+        -
+            bash_aliases: null
+    _prevent_empty: ''
+apache:
+    modules:
+        - php
+        - rewrite
+    vhosts:
+        k4ncMX4TWoNm:
+            servername: queue.dev
+            serveraliases:
+                - www.queue.dev
+            docroot: /var/www/web
+            port: '80'
+            setenv:
+                - 'APP_ENV dev'
+                - 'APP_DEBUG true'
+            override:
+                - All
+    user: www-data
+    group: www-data
+    default_vhost: true
+    mpm_module: prefork
+php:
+    version: '54'
+    composer: '1'
+    modules:
+        php:
+            - cli
+            - intl
+            - mcrypt
+        pear: {  }
+        pecl:
+            - pecl_http
+            - APC
+    ini:
+        display_errors: On
+        error_reporting: '-1'
+        session.save_path: /var/lib/php/session
+        short_open_tag: off
+    timezone: Asia/Manila
+xdebug:
+    install: 0
+    settings:
+        xdebug.default_enable: '1'
+        xdebug.remote_autostart: '0'
+        xdebug.remote_connect_back: '1'
+        xdebug.remote_enable: '1'
+        xdebug.remote_handler: dbgp
+        xdebug.remote_port: '9000'
+mysql:
+    root_password: password
+    phpmyadmin: '1'
+    databases:
+        Z6dQ5OvtgfHW:
+            grant:
+                - ALL
+            name: txtcmdr
+            host: localhost
+            user: foo
+            password: bar
+            sql_file: ''
+
