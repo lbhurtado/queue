@@ -1,8 +1,8 @@
 ---
 vagrantfile-local:
     vm:
-        box: ubuntu-precise12042-x64-vbox4210
-        box_url: 'http://puppet-vagrant-boxes.puppetlabs.com/ubuntu-server-12042-x64-vbox4210.box'
+        box: precise32
+        box_url: 'http://files.vagrantup.com/precise32.box'
         hostname: null
         network:
             private_network: 10.10.10.10
@@ -27,7 +27,7 @@ vagrantfile-local:
                     - '--parser future'
         synced_folder:
             BilI7R23xc7U:
-                id: vagrant-root
+                id: symfony-root
                 source: ../
                 target: /var/www
                 nfs: 'false'
