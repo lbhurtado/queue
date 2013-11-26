@@ -28,7 +28,7 @@ vagrantfile-local:
         synced_folder:
             BilI7R23xc7U:
                 id: vagrant-root
-                source: ./
+                source: ../
                 target: /var/www
                 nfs: 'false'
         usable_port_range: 2200..2250
@@ -47,6 +47,7 @@ vagrantfile-local:
 server:
     packages:
         - acl
+        - vim
     dot_files:
         -
             bash_aliases: null
@@ -82,7 +83,6 @@ php:
         pear: {  }
         pecl:
             - pecl_http
-            - APC
     ini:
         display_errors: On
         error_reporting: '-1'
